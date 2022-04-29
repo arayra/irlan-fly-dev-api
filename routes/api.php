@@ -18,6 +18,7 @@ use App\Http\Controllers\ArticleController;
 
 Route::get('articles', [ArticleController::class, 'index']);
 Route::get('articles/{path}', [ArticleController::class, 'show']);
+Route::get('articles/{path}', [ArticleController::class, 'showbypath']);
 Route::post('articles', [ArticleController::class, 'store']);
 Route::put('articles/{path}', [ArticleController::class, 'update']);
 Route::delete('articles/{path}', [ArticleController::class, 'delete']);

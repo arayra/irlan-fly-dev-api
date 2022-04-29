@@ -17,6 +17,12 @@ class ArticleController extends Controller
         return Article::find($id);
     }
 
+    // Only show() has 'bypath' because for delete or other we need $id
+    public function showbypath($path)
+    {
+        return Article::where('path', $path)->get();
+    }
+
     public function store(Request $request)
     {
         return Article::create($request->all());
@@ -30,7 +36,6 @@ class ArticleController extends Controller
 
         return $article;
     }
-
 
     public function delete(Request $request, $id)
     {
