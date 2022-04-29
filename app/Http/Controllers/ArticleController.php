@@ -12,9 +12,9 @@ class ArticleController extends Controller
         return Article::all();
     }
 
-    public function show($path)
+    public function show($id)
     {
-        return Article::find($path);
+        return Article::find($id);
     }
 
     public function store(Request $request)
@@ -23,18 +23,18 @@ class ArticleController extends Controller
     }
 
 
-    public function update(Request $request, $path)
+    public function update(Request $request, $id)
     {
-        $article = Article::findOrFail($path);
+        $article = Article::findOrFail($id);
         $article->update($request->all());
 
         return $article;
     }
 
 
-    public function delete(Request $request, $path)
+    public function delete(Request $request, $id)
     {
-        $article = Article::findOrFail($path);
+        $article = Article::findOrFail($id);
         $article->delete();
 
         return 204;
